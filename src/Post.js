@@ -1,36 +1,50 @@
+import { useState } from "react"
+
 export default function Post(props) {
+
+    const [salvo, setSalvo] = useState(false)
+    const [curtido, setCurtido] = useState(false)
+
+    function salvarPost() {
+        setSalvo((state) => !state)
+    }
+
+    function curtirPost() {
+        setCurtido((state) => !state)
+    }
+
     return (
-        <div class="post">
-            <div class="topo">
-                <div class="usuario">
+        <div className="post">
+            <div className="topo">
+                <div className="usuario">
                     <img src={props.imagemPerfil} alt={props.username} />
                     {props.username}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
+            <div className="conteudo">
                 <img src={props.imagem} alt={props.descricao} />
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name={curtido ? "heart" : "heart-outline"} onClick={curtirPost}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon name={salvo ? "bookmark" : "bookmark-outline"} onClick={salvarPost}></ion-icon>
                     </div>
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={props.perfilCurtiu} alt={props.usernameCurtiu} />
-                    <div class="texto">
-                        Curtido por <strong>{props.usernameCurtiu}</strong> e <strong>outras 101.523 pessoas</strong>
+                    <div className="texto">
+                        Curtido por <strong>{props.usernameCurtiu}</strong> e <strong>outras {props.numeroCurtidas} pessoas</strong>
                     </div>
                 </div>
             </div>

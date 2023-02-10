@@ -2,7 +2,7 @@ import Story from "./Story";
 
 export default function Stories() {
     return (
-        <div class="stories">
+        <div className="stories">
             <Story imagem="assets/img/9gag.svg" texto="9gag" />
             <Story imagem="assets/img/meowed.svg" texto="meowed" />
             <Story imagem="assets/img/barked.svg" texto="barked" />
@@ -12,7 +12,7 @@ export default function Stories() {
             <Story imagem="assets/img/filomoderna.svg" texto="filomoderna" />
             <Story imagem="assets/img/memeriagourmet.svg" texto="memeriagourmet" />
 
-            <div class="setinha">
+            <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>
