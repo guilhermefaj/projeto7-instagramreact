@@ -2,16 +2,23 @@ import { useState } from "react"
 
 export default function Post(props) {
 
-    const [salvo, setSalvo] = useState(false)
-    const [curtido, setCurtido] = useState(false)
+    const [salvo, setSalvo] = useState(false);
+    const [curtido, setCurtido] = useState(false);
 
     function salvarPost() {
-        setSalvo((state) => !state)
+        setSalvo((state) => !state);
     }
 
     function curtirPost() {
-        setCurtido((state) => !state)
+        setCurtido((state) => !state);
     }
+
+    function curtirImagem() {
+        setCurtido(true);
+    }
+
+    const curtidas = curtido ? props.numeroCurtidas + 1 : props.numeroCurtidas;
+    const curtidasFormatado = `${Math.floor(curtidas / 1000)}.${curtidas % 1000}`
 
     return (
         <div className="post">
@@ -26,7 +33,7 @@ export default function Post(props) {
             </div>
 
             <div className="conteudo">
-                <img src={props.imagem} alt={props.descricao} />
+                <img src={props.imagem} alt={props.descricao} onClick={curtirImagem} />
             </div>
 
             <div className="fundo">
@@ -44,7 +51,7 @@ export default function Post(props) {
                 <div className="curtidas">
                     <img src={props.perfilCurtiu} alt={props.usernameCurtiu} />
                     <div className="texto">
-                        Curtido por <strong>{props.usernameCurtiu}</strong> e <strong>outras {props.numeroCurtidas} pessoas</strong>
+                        Curtido por <strong>{props.usernameCurtiu}</strong> e <strong>outras {curtidasFormatado} pessoas</strong>
                     </div>
                 </div>
             </div>

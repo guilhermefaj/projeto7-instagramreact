@@ -10,7 +10,7 @@ export default function Posts() {
                 descricao="gato-telefone"
                 perfilCurtiu="assets/img/respondeai.svg"
                 usernameCurtiu="respondeai"
-                numeroCurtidas="84.563"
+                numeroCurtidas={84563}
             />
             <Post
                 imagemPerfil="assets/img/barked.svg"
@@ -19,7 +19,7 @@ export default function Posts() {
                 descricao="dog"
                 perfilCurtiu="assets/img/adorable_animals.svg"
                 usernameCurtiu="adorable_animals"
-                numeroCurtidas="153.547"
+                numeroCurtidas={153547}
             />
             <Post
                 imagemPerfil="assets/img/9gag.svg"
@@ -28,7 +28,7 @@ export default function Posts() {
                 descricao="angry cats"
                 perfilCurtiu="assets/img/meowed.svg"
                 usernameCurtiu="meowed"
-                numeroCurtidas="27.432"
+                numeroCurtidas={27432}
             />
         </div>
     )
